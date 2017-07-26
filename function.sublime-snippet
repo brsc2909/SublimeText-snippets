@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-CREATE FUNCTION ${1: name}(${2: var1} IN ${3: NUMBER}) 
+CREATE FUNCTION ${1: name}(${2:var1} IN ${3:NUMBER}) 
 	RETURN $3 
 	IS $2 $3(${4:38});
 	BEGIN 
