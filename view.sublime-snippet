@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+CREATE OR REPLACE VIEW ${1:SCHEMA}.${2:VIEW}
+()
+AS
+SELECT
+	${5:col1},
+	${6:col2},
+	${7:col3},
+FROM
+	${3:SCHEMA}.${4:TABLE_NAME};
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>view</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.sql</scope>
+	<description>oracle create view</description>
+</snippet>
