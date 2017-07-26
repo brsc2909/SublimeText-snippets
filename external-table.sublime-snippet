@@ -1,0 +1,32 @@
+<snippet>
+	<content><![CDATA[
+CREATE TABLE ${1:SCHEMA}.${2:TABLE_NAME}(
+  ${4:col1}     ${5: NUMBER}(${6: 38}),
+  ${7:col1}     ${8: NUMBER}(${9: 38}),
+  ${10:col1}     ${11: NUMBER}(${12: 38}),
+)
+ORGANIZATION EXTERNAL (
+  TYPE ORACLE_LOADER
+  DEFAULT DIRECTORY ext_tab_data
+  ACCESS PARAMETERS (
+    RECORDS DELIMITED BY NEWLINE
+    FIELDS TERMINATED BY ','
+    MISSING FIELD VALUES ARE NULL
+    (
+      $4      	CHAR($6),
+      $7      	CHAR($9),
+      $10  		CHAR($12)
+    )
+  )
+  LOCATION ('${3:file.csv}')
+)
+PARALLEL 5
+REJECT LIMIT UNLIMITED;
+	
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>xt</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.sql</scope>
+	<description>Oracle external table</description>
+</snippet>
