@@ -8,16 +8,14 @@ DROP TABLE $1.$2;
 CREATE TABLE ${1:SCHEMA}.${2:TABLE_NAME}(
 	${3:id}		${4:NUMBER} ${9:GENERATED ALWAYS AS IDENTITY},
 	${5:col1}	${6:VARCHAR2(250)},
-	${7:col2},	${8:VARCHAR2(250)}
-	-- primary key constraint
-	CONSTRAINT pk_$2_$3 PRIMARY KEY ($3)
+	${7:col2}	${8:VARCHAR2(250)}
 );
 
 GRANT SELECT ON $1.$2 TO ${10:user or role};
 
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>ctable</tabTrigger> 
+	<tabTrigger>otable</tabTrigger> 
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<scope>source.sql</scope>
     <description>create oracle table</description>
